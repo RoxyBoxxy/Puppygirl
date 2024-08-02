@@ -25,7 +25,7 @@ stages:
   - name: Add-Nvidia-Repo
     type: shell
     commands:
-    - add-apt-repository ppa:graphics-drivers/ppa
+    - apt install nvidia-driver-555
     - apt update
 
   - name: add-some-needed-packages # Sample module using the built-in Apt module to install packages
