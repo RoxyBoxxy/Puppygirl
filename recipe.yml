@@ -22,12 +22,6 @@ stages:
     - apt-get update
 
   # Put your custom actions behind this comment
-  - name: Add-Nvidia-Repo
-    type: shell
-    commands:
-    - apt install nvidia-driver-550
-    - apt update
-
   - name: add-some-needed-packages # Sample module using the built-in Apt module to install packages
     type: apt
     source:
