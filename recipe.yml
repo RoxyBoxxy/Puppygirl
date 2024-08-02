@@ -22,12 +22,21 @@ stages:
     - apt-get update
 
   # Put your custom actions behind this comment
+  - name: Add-Nvidia-Repo
+    type: shell
+    commands:
+    - add-apt-repository ppa:graphics-drivers/ppa
+    - apt update
 
-  - name: example-packages # Sample module using the built-in Apt module to install packages
+  - name: add-some-needed-packages # Sample module using the built-in Apt module to install packages
     type: apt
     source:
       packages:
-      - vim
+      - nano
+      - build-essential
+      - dkms
+      - wine
+      - mono-complete
 
   - name: example-commands # Sample module demonstrating the Shell module with custom commands
     type: shell
