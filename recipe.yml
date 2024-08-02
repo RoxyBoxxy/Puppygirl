@@ -23,7 +23,7 @@ stages:
     - wget -qO - https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc | gpg --dearmor | dd of=/etc/apt/trusted.gpg.d/linux-surface.gpg
     - echo "deb [arch=amd64] https://pkg.surfacelinux.com/debian release main" | tee /etc/apt/sources.list.d/linux-surface.list
     - apt update
-    - apt install linux-image-surface linux-headers-surface libwacom-surface iptsd
+    - apt install linux-image-surface linux-headers-surface libwacom-surface iptsd -y
 
   # Put your custom actions behind this comment
   - name: add-some-needed-packages # Sample module using the built-in Apt module to install packages
